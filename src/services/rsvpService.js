@@ -1,7 +1,7 @@
 import { getDuplicatePairKey } from '../utils/validators';
 
-const STORAGE_KEY_PREFIX = 'espaco_five_rsvp_guests_';
-const DISMISSED_DUPLICATES_PREFIX = 'espaco_five_dismissed_duplicates_';
+const STORAGE_KEY_PREFIX = 'obza_demo_v2_rsvp_guests_';
+const DISMISSED_DUPLICATES_PREFIX = 'obza_demo_v2_dismissed_duplicates_';
 
 function getStorageKey(eventId) {
   return `${STORAGE_KEY_PREFIX}${eventId}`;
@@ -19,21 +19,29 @@ function generateId() {
 }
 
 /**
- * Gera os 6 convidados fictícios de demonstração para o Espaço Five Buffet:
- * - Mistura Adultos (4) e Crianças até 10 anos (2)
- * - Inclui 2 check-ins já realizados
- * - Inclui 1 convidado duplicado propositalmente ("Gabriel Mendes Costa"):
- *   uma vez incluído como acompanhante por "Ricardo Mendes Costa" e outra por "Confirmação própria".
+ * Gera de 10 a 12 convidados fictícios bem realistas para demonstração do painel:
+ * - Mistura Adultos (8) e Crianças até 10 anos (3) (Total: 11 convidados)
+ * - 3 convidados com check-in já realizado (status ativo verde)
+ * - 1 par de nomes idênticos (duplicado exato): "Mariana Ferreira" confirmada duas vezes
+ * - 1 par de nomes muito parecidos (possível duplicidade): "Carlos Eduardo Lima" e "Carlos Lima"
  */
 function buildDemoSeedGuests(eventId) {
   const baseTime = new Date('2026-12-02T14:20:00-04:00').toISOString();
   const secondTime = new Date('2026-12-03T18:45:00-04:00').toISOString();
   const thirdTime = new Date('2026-12-04T10:15:00-04:00').toISOString();
-  const checkInTime = new Date('2026-12-19T20:12:00-04:00').toISOString();
+  const fourthTime = new Date('2026-12-05T16:30:00-04:00').toISOString();
+  const fifthTime = new Date('2026-12-06T11:00:00-04:00').toISOString();
+  const checkInTime1 = new Date('2026-12-19T20:05:00-04:00').toISOString();
+  const checkInTime2 = new Date('2026-12-19T20:12:00-04:00').toISOString();
+  const checkInTime3 = new Date('2026-12-19T20:18:00-04:00').toISOString();
 
   const groupBeatriz = 'seed_group_beatriz';
   const groupRicardo = 'seed_group_ricardo';
-  const groupGabriel = 'seed_group_gabriel';
+  const groupMariana1 = 'seed_group_mariana_1';
+  const groupMariana2 = 'seed_group_mariana_2';
+  const groupCarlosEduardo = 'seed_group_carlos_eduardo';
+  const groupCarlosLima = 'seed_group_carlos_lima';
+  const groupJuliana = 'seed_group_juliana';
 
   return [
     {
@@ -46,7 +54,7 @@ function buildDemoSeedGuests(eventId) {
       ageGroup: 'Adulto',
       ageCategory: 'adult',
       checkedIn: true,
-      checkedInAt: checkInTime,
+      checkedInAt: checkInTime1,
       confirmedAt: baseTime,
     },
     {
@@ -59,7 +67,7 @@ function buildDemoSeedGuests(eventId) {
       ageGroup: 'Criança até 10 anos',
       ageCategory: 'child',
       checkedIn: true,
-      checkedInAt: checkInTime,
+      checkedInAt: checkInTime2,
       confirmedAt: baseTime,
     },
     {
@@ -71,8 +79,8 @@ function buildDemoSeedGuests(eventId) {
       name: 'Ricardo Mendes Costa',
       ageGroup: 'Adulto',
       ageCategory: 'adult',
-      checkedIn: false,
-      checkedInAt: null,
+      checkedIn: true,
+      checkedInAt: checkInTime3,
       confirmedAt: secondTime,
     },
     {
@@ -91,28 +99,93 @@ function buildDemoSeedGuests(eventId) {
     {
       id: 'seed_guest_5',
       eventId,
-      groupId: groupRicardo,
-      groupLead: 'Ricardo Mendes Costa',
-      isLead: false,
-      name: 'Gabriel Mendes Costa',
-      ageGroup: 'Adulto',
-      ageCategory: 'adult',
-      checkedIn: false,
-      checkedInAt: null,
-      confirmedAt: secondTime,
-    },
-    {
-      id: 'seed_guest_6',
-      eventId,
-      groupId: groupGabriel,
-      groupLead: 'Gabriel Mendes Costa',
+      groupId: groupMariana1,
+      groupLead: 'Mariana Ferreira',
       isLead: true,
-      name: 'Gabriel Mendes Costa',
+      name: 'Mariana Ferreira',
       ageGroup: 'Adulto',
       ageCategory: 'adult',
       checkedIn: false,
       checkedInAt: null,
       confirmedAt: thirdTime,
+    },
+    {
+      id: 'seed_guest_6',
+      eventId,
+      groupId: groupMariana2,
+      groupLead: 'André Luiz Ferreira',
+      isLead: false,
+      name: 'Mariana Ferreira',
+      ageGroup: 'Adulto',
+      ageCategory: 'adult',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fourthTime,
+    },
+    {
+      id: 'seed_guest_7',
+      eventId,
+      groupId: groupCarlosEduardo,
+      groupLead: 'Carlos Eduardo Lima',
+      isLead: true,
+      name: 'Carlos Eduardo Lima',
+      ageGroup: 'Adulto',
+      ageCategory: 'adult',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fourthTime,
+    },
+    {
+      id: 'seed_guest_8',
+      eventId,
+      groupId: groupCarlosLima,
+      groupLead: 'Carlos Lima',
+      isLead: true,
+      name: 'Carlos Lima',
+      ageGroup: 'Adulto',
+      ageCategory: 'adult',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fifthTime,
+    },
+    {
+      id: 'seed_guest_9',
+      eventId,
+      groupId: groupJuliana,
+      groupLead: 'Juliana Prado Albuquerque',
+      isLead: true,
+      name: 'Juliana Prado Albuquerque',
+      ageGroup: 'Adulto',
+      ageCategory: 'adult',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fifthTime,
+    },
+    {
+      id: 'seed_guest_10',
+      eventId,
+      groupId: groupJuliana,
+      groupLead: 'Juliana Prado Albuquerque',
+      isLead: false,
+      name: 'Felipe Prado Albuquerque',
+      ageGroup: 'Adulto',
+      ageCategory: 'adult',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fifthTime,
+    },
+    {
+      id: 'seed_guest_11',
+      eventId,
+      groupId: groupJuliana,
+      groupLead: 'Juliana Prado Albuquerque',
+      isLead: false,
+      name: 'Manuela Prado Albuquerque',
+      ageGroup: 'Criança até 10 anos',
+      ageCategory: 'child',
+      checkedIn: false,
+      checkedInAt: null,
+      confirmedAt: fifthTime,
     },
   ];
 }

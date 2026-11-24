@@ -8,6 +8,7 @@ import {
 import Countdown from '../components/Countdown';
 import RsvpForm from '../components/RsvpForm';
 import { OliveArchGraphic } from '../components/BotanicalMotif';
+import { ObzaWordmark } from '../components/ObzaBrand';
 
 export default function InvitePage() {
   const { slug } = useParams();
@@ -313,9 +314,10 @@ export default function InvitePage() {
                 href={event.authorUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-sm text-textMuted hover:text-textPrimary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.12em] text-textMuted hover:text-textPrimary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
               >
-                {event.authorName}
+                <span>Feito por</span>
+                <ObzaWordmark className="h-2.5 w-auto text-textPrimary inline-block" />
               </a>
             </div>
           </div>

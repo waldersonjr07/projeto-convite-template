@@ -26,9 +26,9 @@ export const EVENTS_BY_SLUG = {
     specialNoteDescription:
       'Pedimos traje esporte fino para compor a harmonia da noite no salão.',
     footerReception: 'Recepção • Espaço Five Buffet',
-    authorName: 'Feito por Obza',
+    authorName: 'Feito por OBZA',
     authorUrl: 'https://obza.com.br',
-    panelPassword: 'Espaco5',
+    panelPassword: 'Obza123',
     webhookUrl: '',
     maxCompanions: 5,
     palette: {

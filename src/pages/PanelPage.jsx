@@ -17,40 +17,25 @@ import {
   compareGuestNames,
   getDuplicatePairKey,
 } from '../utils/validators';
+import { ObzaIcon, ObzaWordmark, ObzaBrand } from '../components/ObzaBrand';
 
-const AUTH_SESSION_PREFIX = 'espaco_five_panel_auth_';
+const AUTH_SESSION_PREFIX = 'obza_panel_auth_';
 
-/**
- * Ícone minimalista e geométrico flat de coroa na cor dourado champanhe.
- */
-export function CrownIcon({ className = 'w-5 h-5 text-[#C9A45C]' }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      role="img"
-      aria-hidden="true"
-    >
-      <path d="M2 19h20v2H2v-2zm1.8-12.5l3.8 3.5 4.4-6 4.4 6 3.8-3.5L20 17H4L3.8 6.5z" />
-    </svg>
-  );
-}
+export { ObzaIcon, ObzaWordmark, ObzaBrand };
 
 /**
  * Ícone SVG minimalista de olho (aberto / cortado) para mostrar ou ocultar senha.
  */
-function EyeIcon({ isVisible, className = 'w-5 h-5' }) {
+function EyeIcon({ isVisible, className = 'w-4 h-4' }) {
   if (isVisible) {
     return (
       <svg
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className={className}
         aria-hidden="true"
       >
@@ -67,14 +52,138 @@ function EyeIcon({ isVisible, className = 'w-5 h-5' }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="square"
-      strokeLinejoin="miter"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className={className}
       aria-hidden="true"
     >
       <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
       <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+function SearchIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="20" y1="20" x2="16.2" y2="16.2" />
+    </svg>
+  );
+}
+
+function PrinterIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M6 9V3h12v6" />
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+      <rect x="6" y="14" width="12" height="7" />
+    </svg>
+  );
+}
+
+function LockIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="4" y="11" width="16" height="10" rx="2" />
+      <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+    </svg>
+  );
+}
+
+function CheckIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.9"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
+function CircleIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="8" />
+    </svg>
+  );
+}
+
+function TrashIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <polyline points="3 6 5 6 21 6" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+    </svg>
+  );
+}
+
+function AlertIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+      <line x1="12" y1="9" x2="12" y2="13" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
     </svg>
   );
 }
@@ -134,11 +243,9 @@ export default function PanelPage() {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.style.setProperty('--bg-main', '#141413');
-    root.style.setProperty('--text-primary', '#F5F3EE');
-    if (event) {
-      document.title = `Portaria • ${event.eventTitle || event.honoree} • ${event.venueName}`;
-    }
+    root.style.setProperty('--bg-main', '#08090A');
+    root.style.setProperty('--text-primary', '#F7F8F8');
+    document.title = 'OBZA | Painel da Portaria';
   }, [event]);
 
   useEffect(() => {
@@ -168,8 +275,8 @@ export default function PanelPage() {
 
   const handleUnlockSubmit = (e) => {
     e.preventDefault();
-    const expectedPassword = event?.panelPassword || 'Espaco5';
-    if (passwordInput.trim() === expectedPassword) {
+    const expectedPassword = event?.panelPassword || 'Obza123';
+    if (passwordInput.trim().toLowerCase() === expectedPassword.toLowerCase()) {
       try {
         sessionStorage.setItem(authStorageKey, 'true');
       } catch {
@@ -180,7 +287,7 @@ export default function PanelPage() {
       setShowPassword(false);
       setAuthError('');
     } else {
-      setAuthError('Senha incorreta. Verifique com a administração do Espaço Five.');
+      setAuthError('Senha incorreta. Verifique com a administração.');
     }
   };
 
@@ -319,12 +426,15 @@ export default function PanelPage() {
     const uniqueDuplicateNames = Array.from(
       new Set(duplicateEntries.map((g) => g.name))
     );
+    const checkInPercentage =
+      total > 0 ? Math.round((checkedIn / total) * 100) : 0;
 
     return {
       total,
       adults,
       children,
       checkedIn,
+      checkInPercentage,
       duplicateRecordsCount: duplicateEntries.length,
       uniqueDuplicateNames,
     };
@@ -383,17 +493,17 @@ export default function PanelPage() {
 
   if (!event) {
     return (
-      <main className="min-h-screen bg-[#141413] text-[#F5F3EE] flex items-center justify-center px-6 py-16">
-        <div className="max-w-md w-full bg-[#1E1E1C] p-8 sm:p-10">
-          <h1 className="font-solid text-3xl font-bold text-[#F5F3EE] leading-tight mb-4">
+      <main className="min-h-screen bg-[#08090A] text-[#F7F8F8] flex items-center justify-center px-6 py-16 font-sans font-normal">
+        <div className="max-w-md w-full bg-[#111214] border border-[#1F2125] rounded-xl p-7 sm:p-8">
+          <h1 className="text-xl sm:text-2xl font-medium text-[#F7F8F8] tracking-[-0.03em] leading-tight mb-3">
             Evento não encontrado
           </h1>
-          <p className="text-base text-[#9E9B93] leading-relaxed mb-8">
+          <p className="text-[13.5px] text-[#8A8F98] font-normal leading-relaxed mb-6">
             Não encontramos um painel de portaria para o identificador informado.
           </p>
           <Link
             to={`/painel/${DEFAULT_EVENT_SLUG}`}
-            className="inline-flex items-center justify-center w-full px-6 py-4 bg-[#C9A45C] text-[#141413] font-semibold text-base"
+            className="inline-flex items-center justify-center w-full h-9 px-4 bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] hover:border-[#434854] text-[#F7F8F8] font-medium text-[13.5px] rounded-lg transition-colors duration-100"
           >
             Abrir Painel Demonstrativo
           </Link>
@@ -405,29 +515,34 @@ export default function PanelPage() {
   // Tela de Bloqueio com Senha Fixa e Botão Mostrar/Ocultar Senha (Olhinho)
   if (!isUnlocked) {
     return (
-      <main className="min-h-screen bg-[#141413] text-[#F5F3EE] font-sans flex flex-col justify-between px-5 py-10 sm:px-8">
-        <div className="max-w-md w-full mx-auto my-auto">
-          <div className="bg-[#1E1E1C] p-7 sm:p-10">
-            <div className="flex items-center gap-2 mb-3">
-              <CrownIcon className="w-5 h-5 text-[#C9A45C]" />
-              <p className="text-sm font-semibold text-[#C9A45C]">
-                {event.venueName} • Portaria
-              </p>
+      <main className="min-h-screen bg-[#08090A] text-[#F7F8F8] font-sans font-normal flex flex-col justify-between px-5 py-10 sm:px-8">
+        <div className="max-w-sm w-full mx-auto my-auto">
+          <div className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-6 sm:p-8 transition-colors duration-100">
+            <div className="flex items-center gap-2.5 mb-4">
+              <ObzaBrand
+                iconClassName="w-4 h-4 text-[#FFFFFF]"
+                wordmarkClassName="h-3.5 w-auto text-[#FFFFFF]"
+                className="inline-flex items-center gap-2 text-[#FFFFFF]"
+              />
+              <span className="text-[12px] px-2 py-0.5 bg-[#16181C] text-[#8A8F98] border border-[#23262C] rounded-md font-normal ml-0.5 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+                Painel da Portaria
+              </span>
             </div>
 
-            <h1 className="font-solid text-2xl sm:text-3xl font-bold text-[#F5F3EE] tracking-tight leading-tight mb-3">
+            <h1 className="text-xl sm:text-2xl font-medium text-[#F7F8F8] tracking-[-0.03em] leading-tight mb-2">
               {event.eventTitle || `15 Anos de ${event.honoree}`}
             </h1>
 
-            <p className="text-sm text-[#9E9B93] leading-relaxed mb-8">
-              Acesso restrito à equipe de recepção e cerimonial. Digite a senha operacional do buffet para abrir a lista de convidados.
+            <p className="text-[13px] text-[#8A8F98] font-normal leading-relaxed mb-6">
+              Acesso restrito à equipe de recepção e cerimonial. Digite a senha operacional para abrir a lista de convidados.
             </p>
 
-            <form onSubmit={handleUnlockSubmit} noValidate className="space-y-5">
+            <form onSubmit={handleUnlockSubmit} noValidate className="space-y-4">
               <div>
                 <label
                   htmlFor="panel-password"
-                  className="block text-sm font-semibold text-[#F5F3EE] mb-2"
+                  className="block text-[13px] font-medium text-[#F7F8F8] mb-1.5"
                 >
                   Senha do Painel
                 </label>
@@ -441,26 +556,26 @@ export default function PanelPage() {
                       setPasswordInput(e.target.value);
                       if (authError) setAuthError('');
                     }}
-                    placeholder="Digite a senha do buffet"
+                    placeholder="Digite a senha operacional"
                     aria-invalid={Boolean(authError)}
                     aria-describedby={authError ? 'panel-auth-error' : undefined}
-                    className="w-full bg-[#282825] text-[#F5F3EE] placeholder:text-[#9E9B93]/60 pl-4 pr-12 py-3.5 text-base focus:outline focus:outline-2 focus:outline-[#C9A45C]"
+                    className="w-full h-9 bg-[#08090A] border border-[#1F2125] hover:border-[#2E3138] rounded-lg text-[#F7F8F8] placeholder:text-[#8A8F98]/60 pl-3 pr-10 text-[13.5px] font-normal focus:bg-[#111214] focus:outline-none focus:border-[#434854] transition-colors duration-100"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword((prev) => !prev)}
                     aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
                     aria-pressed={showPassword}
-                    className="absolute right-1 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-[#9E9B93] hover:text-[#F5F3EE] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C9A45C]"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-[#8A8F98] hover:text-[#F7F8F8] rounded-md transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[#434854]"
                   >
-                    <EyeIcon isVisible={showPassword} className="w-5 h-5" />
+                    <EyeIcon isVisible={showPassword} className="w-4 h-4" />
                   </button>
                 </div>
                 {authError && (
                   <p
                     id="panel-auth-error"
                     role="alert"
-                    className="mt-2 text-sm font-medium text-[#E2956B]"
+                    className="mt-1.5 text-[12.5px] font-medium text-red-400"
                   >
                     {authError}
                   </p>
@@ -469,7 +584,7 @@ export default function PanelPage() {
 
               <button
                 type="submit"
-                className="w-full py-4 px-6 bg-[#C9A45C] text-[#141413] font-semibold text-base transition-transform duration-150 active:scale-[0.99] hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C]"
+                className="w-full h-9 px-4 bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] hover:border-[#434854] text-[#F7F8F8] font-medium text-[13.5px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#434854]"
               >
                 Acessar Lista da Portaria
               </button>
@@ -477,19 +592,17 @@ export default function PanelPage() {
           </div>
         </div>
 
-        <footer className="max-w-md w-full mx-auto pt-8 flex items-center justify-between text-xs text-[#9E9B93]">
-          <span className="flex items-center gap-1.5">
-            <CrownIcon className="w-3.5 h-3.5 text-[#C9A45C]" />
-            {event.venueName}
-          </span>
+        <footer className="max-w-sm w-full mx-auto pt-8 flex items-center justify-between text-[12px] text-[#8A8F98]">
           <a
             href={event.authorUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#F5F3EE] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#8A8F98] hover:text-[#FFFFFF] transition-colors duration-100"
           >
-            {event.authorName}
+            <span>Feito por</span>
+            <ObzaWordmark className="h-2.5 w-auto text-[#F7F8F8] inline-block" />
           </a>
+          <span className="text-[11.5px] text-[#8A8F98]/80">Acesso Operacional</span>
         </footer>
       </main>
     );
@@ -505,140 +618,157 @@ export default function PanelPage() {
   return (
     <div
       data-ui="true"
-      className="panel-print-root min-h-screen bg-[#141413] text-[#F5F3EE] font-sans selection:bg-[#C9A45C] selection:text-[#141413]"
+      className="panel-print-root min-h-screen bg-[#08090A] text-[#F7F8F8] font-sans font-normal selection:bg-[#2E3138] selection:text-[#F7F8F8]"
     >
       {/* =====================================================================
           INTERFACE OPERACIONAL EM TELA (Oculta na impressão A4 via .no-print)
          ===================================================================== */}
       <div className="no-print">
-        {/* Cabeçalho Operacional com Ícone da Coroa e Tipografia Sólida */}
-        <header className="bg-[#1E1E1C]">
-          <div className="max-w-5xl mx-auto px-5 sm:px-8 py-6 sm:py-8">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+        {/* Cabeçalho Operacional com Branding OBZA (Densidade Linear) */}
+        <header className="bg-[#111214] border-b border-[#1F2125]">
+          <div className="max-w-5xl mx-auto px-5 sm:px-8 py-5 sm:py-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <div className="flex flex-wrap items-center gap-3 mb-2.5">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#C9A45C]">
-                    <CrownIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#C9A45C]" />
-                    <span>{event.venueName} • Controle de Portaria</span>
-                  </div>
-                  <span className="text-xs px-2.5 py-0.5 bg-[#2E2A21] text-[#E5C98B] font-medium">
-                    Recepção Oficial
-                  </span>
+                <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
+                  <ObzaBrand
+                    iconClassName="w-4 h-4 text-[#FFFFFF]"
+                    wordmarkClassName="h-3.5 w-auto text-[#FFFFFF]"
+                    className="inline-flex items-center gap-2 text-[#FFFFFF]"
+                  />
                 </div>
 
-                <h1 className="font-solid text-2xl sm:text-4xl lg:text-5xl font-bold text-[#F5F3EE] leading-[1.08] tracking-tight">
+                <h1 className="text-xl sm:text-2xl lg:text-[28px] font-medium text-[#F7F8F8] leading-tight tracking-[-0.03em]">
                   {event.eventTitle || `15 Anos de ${event.honoree}`}
                 </h1>
 
-                <p className="mt-2.5 text-sm sm:text-base text-[#9E9B93]">
-                  {event.eventDateFormatted} • {event.eventTimeFormatted} • {event.venueAddress}
+                <p className="mt-1 text-[13px] text-[#8A8F98] font-normal">
+                  {event.eventDateFormatted} • {event.eventTimeFormatted}
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 md:justify-end shrink-0">
+              <div className="flex flex-wrap items-center gap-2.5 md:justify-end shrink-0">
                 <button
                   type="button"
                   onClick={handlePrintRequest}
-                  className="flex-1 sm:flex-initial px-6 py-3.5 bg-[#C9A45C] text-[#141413] font-semibold text-sm sm:text-base transition-transform duration-150 active:scale-[0.98] hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C]"
+                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 h-9 px-3.5 bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] hover:border-[#434854] text-[#F7F8F8] font-medium text-[13px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#434854]"
                 >
-                  Imprimir Lista da Portaria
+                  <PrinterIcon className="w-4 h-4 text-[#8A8F98]" />
+                  <span>Imprimir Lista da Portaria</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={handleLockPanel}
-                  className="px-4 py-3.5 bg-[#343430] text-[#F5F3EE] font-medium text-sm sm:text-base transition-colors hover:bg-[#282825] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C]"
+                  className="inline-flex items-center justify-center gap-1.5 h-9 px-3 bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] hover:bg-[#16181C] text-[#8A8F98] hover:text-[#F7F8F8] font-normal text-[13px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#434854]"
                 >
-                  Sair / Bloquear
+                  <LockIcon className="w-4 h-4 text-[#8A8F98]" />
+                  <span>Sair / Bloquear</span>
                 </button>
               </div>
             </div>
           </div>
         </header>
 
-        <main className="max-w-5xl mx-auto px-5 sm:px-8 py-8 sm:py-10 space-y-8">
-          {/* 1. Placar em Tempo Real com Tipografia Sólida e Números Tabulares */}
+        <main className="max-w-5xl mx-auto px-5 sm:px-8 py-6 space-y-5">
+          {/* 1. Placar em Tempo Real (KPIs compactos padrão Linear) */}
           <section aria-label="Placar de convidados em tempo real">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-              <div className="bg-[#1E1E1C] p-5 sm:p-6 flex flex-col justify-between">
-                <span className="text-sm font-medium text-[#9E9B93]">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-4 flex flex-col justify-between transition-colors duration-100">
+                <span className="text-[12.5px] font-normal text-[#8A8F98]">
                   Total Confirmados
                 </span>
-                <div className="mt-3 flex items-baseline justify-between">
-                  <span className="font-solid text-4xl sm:text-5xl font-bold text-[#F5F3EE] tabular-nums leading-none tracking-tight">
+                <div className="mt-2.5 flex items-baseline justify-between">
+                  <span className="text-2xl sm:text-3xl font-medium text-[#F7F8F8] tabular-nums leading-none tracking-[-0.03em]">
                     {stats.total}
                   </span>
-                  <span className="text-xs text-[#9E9B93]">na lista</span>
+                  <span className="text-[12px] text-[#8A8F98]">na lista</span>
                 </div>
               </div>
 
-              <div className="bg-[#1E1E1C] p-5 sm:p-6 flex flex-col justify-between">
-                <span className="text-sm font-medium text-[#9E9B93]">
+              <div className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-4 flex flex-col justify-between transition-colors duration-100">
+                <span className="text-[12.5px] font-normal text-[#8A8F98]">
                   Adultos
                 </span>
-                <div className="mt-3 flex items-baseline justify-between">
-                  <span className="font-solid text-4xl sm:text-5xl font-bold text-[#F5F3EE] tabular-nums leading-none tracking-tight">
+                <div className="mt-2.5 flex items-baseline justify-between">
+                  <span className="text-2xl sm:text-3xl font-medium text-[#F7F8F8] tabular-nums leading-none tracking-[-0.03em]">
                     {stats.adults}
                   </span>
-                  <span className="text-xs px-2 py-0.5 bg-[#282825] text-[#9E9B93]">
+                  <span className="text-[11.5px] px-1.5 py-0.5 bg-[#16181C] text-[#8A8F98] border border-[#1F2125] rounded">
                     Integral
                   </span>
                 </div>
               </div>
 
-              <div className="bg-[#1E1E1C] p-5 sm:p-6 flex flex-col justify-between">
-                <span className="text-sm font-medium text-[#9E9B93]">
+              <div className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-4 flex flex-col justify-between transition-colors duration-100">
+                <span className="text-[12.5px] font-normal text-[#8A8F98]">
                   Crianças (até 10 anos)
                 </span>
-                <div className="mt-3 flex items-baseline justify-between">
-                  <span className="font-solid text-4xl sm:text-5xl font-bold text-[#F5F3EE] tabular-nums leading-none tracking-tight">
+                <div className="mt-2.5 flex items-baseline justify-between">
+                  <span className="text-2xl sm:text-3xl font-medium text-[#F7F8F8] tabular-nums leading-none tracking-[-0.03em]">
                     {stats.children}
                   </span>
-                  <span className="text-xs px-2 py-0.5 bg-[#282825] text-[#9E9B93]">
+                  <span className="text-[11.5px] px-1.5 py-0.5 bg-[#16181C] text-[#8A8F98] border border-[#1F2125] rounded">
                     Infantil
                   </span>
                 </div>
               </div>
 
-              <div className="bg-[#282825] p-5 sm:p-6 flex flex-col justify-between">
-                <span className="text-sm font-medium text-[#E5C98B]">
-                  Check-ins realizados
-                </span>
-                <div className="mt-3 flex items-baseline justify-between">
-                  <span className="font-solid text-4xl sm:text-5xl font-bold text-[#E5C98B] tabular-nums leading-none tracking-tight">
-                    {stats.checkedIn}
-                  </span>
-                  <span className="text-xs text-[#9E9B93] tabular-nums">
-                    faltam {Math.max(0, stats.total - stats.checkedIn)}
-                  </span>
+              <div className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-4 flex flex-col justify-between transition-colors duration-100 relative overflow-hidden">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12.5px] font-normal text-[#8A8F98]">
+                      Check-ins realizados
+                    </span>
+                    <span className="text-[12px] font-medium text-emerald-400 tabular-nums">
+                      {stats.checkInPercentage}%
+                    </span>
+                  </div>
+                  <div className="mt-2.5 flex items-baseline justify-between">
+                    <span className="text-2xl sm:text-3xl font-medium text-emerald-400 tabular-nums leading-none tracking-[-0.03em]">
+                      {stats.checkedIn}
+                    </span>
+                    <span className="text-[12px] text-[#8A8F98] tabular-nums">
+                      faltam {Math.max(0, stats.total - stats.checkedIn)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Barra de progresso fina em verde esmeralda */}
+                <div className="mt-3 w-full h-1 bg-[#1F2125] rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-emerald-500 rounded-full transition-all duration-100"
+                    style={{ width: `${stats.checkInPercentage}%` }}
+                    role="progressbar"
+                    aria-valuenow={stats.checkedIn}
+                    aria-valuemin="0"
+                    aria-valuemax={stats.total}
+                    aria-label={`Progresso de check-ins: ${stats.checkInPercentage}%`}
+                  />
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 2. Banner de Alerta Automático de Duplicidades (Terracota / Âmbar Fosco) */}
+          {/* 2. Banner de Alerta Automático de Duplicidades (Significado Semântico Vermelho) */}
           {stats.duplicateRecordsCount > 0 && (
             <section
               aria-label="Alerta de duplicidades na lista"
               role="alert"
-              className="bg-[#291E1A] p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="bg-[#111214] border border-red-500/30 hover:border-red-500/45 rounded-xl px-4 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors duration-100"
             >
-              <div className="space-y-1">
-                <div className="flex items-center gap-2.5">
-                  <span
-                    className="inline-block w-2.5 h-2.5 bg-[#D9825B]"
-                    aria-hidden="true"
-                  />
-                  <h2 className="text-base font-semibold text-[#F5F3EE]">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <AlertIcon className="w-4 h-4 text-red-400 shrink-0" />
+                  <h2 className="text-[13.5px] font-medium text-[#F7F8F8]">
                     {stats.duplicateRecordsCount} registros com nome duplicado ou similar detectados
                   </h2>
                 </div>
-                <p className="text-sm text-[#D6C5BC] leading-relaxed">
+                <p className="text-[13px] text-[#8A8F98] font-normal leading-relaxed pl-6">
                   Nomes em revisão:{' '}
-                  <strong className="font-semibold text-[#E89B74]">
+                  <span className="font-medium text-red-400">
                     {stats.uniqueDuplicateNames.join(', ')}
-                  </strong>
-                  . Compare quem confirmou cada registro, remova a sobra ou marque como não duplicado caso sejam pessoas distintas.
+                  </span>
+                  . Compare quem confirmou cada registro, remova a sobra ou marque como não duplicado.
                 </p>
               </div>
 
@@ -649,7 +779,7 @@ export default function PanelPage() {
                     prev === 'duplicates' ? 'all' : 'duplicates'
                   )
                 }
-                className="shrink-0 px-5 py-3 bg-[#3A2822] text-[#F2B391] font-semibold text-sm transition-colors hover:bg-[#4A322A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E89B74]"
+                className="shrink-0 h-8 px-3 bg-red-500/15 border border-red-500/30 text-red-400 hover:bg-red-500/25 font-medium text-[13px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-red-400"
               >
                 {activeFilter === 'duplicates'
                   ? 'Mostrar Todos os Convidados'
@@ -658,61 +788,63 @@ export default function PanelPage() {
             </section>
           )}
 
-          {/* 3. Barra de Busca Instantânea e Filtros Rápidos */}
+          {/* 3. Barra de Busca Instantânea e Filtros Rápidos (Controles 13px-14px) */}
           <section
             aria-label="Busca e filtros da lista"
-            className="bg-[#1E1E1C] p-5 sm:p-6 space-y-4"
+            className="bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] rounded-xl p-3 flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between transition-colors duration-100"
           >
-            <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
-              <div className="relative flex-1">
-                <label htmlFor="guest-search" className="sr-only">
-                  Buscar por nome do convidado ou responsável pela confirmação
-                </label>
-                <input
-                  id="guest-search"
-                  type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Buscar convidado ou quem confirmou (ex: Gabriel, Beatriz)..."
-                  className="w-full bg-[#282825] text-[#F5F3EE] placeholder:text-[#9E9B93] px-4 py-3.5 text-base focus:outline focus:outline-2 focus:outline-[#C9A45C]"
-                />
-                {searchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 bg-[#343430] text-xs text-[#F5F3EE] hover:opacity-90"
-                  >
-                    Limpar
-                  </button>
-                )}
-              </div>
+            <div className="relative flex-1">
+              <label htmlFor="guest-search" className="sr-only">
+                Buscar por nome do convidado ou responsável pela confirmação
+              </label>
+              <SearchIcon className="w-4 h-4 text-[#8A8F98] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                id="guest-search"
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar convidado ou quem confirmou (ex: Mariana, Beatriz)..."
+                className="w-full h-8 bg-[#08090A] border border-[#1F2125] hover:border-[#2E3138] rounded-lg text-[#F7F8F8] placeholder:text-[#8A8F98]/60 pl-9 pr-16 text-[13.5px] font-normal focus:bg-[#111214] focus:outline-none focus:border-[#434854] transition-colors duration-100"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-[#16181C] border border-[#23262C] hover:border-[#2E3138] rounded text-[12px] text-[#8A8F98] hover:text-[#F7F8F8] transition-colors duration-100"
+                >
+                  Limpar
+                </button>
+              )}
+            </div>
 
-              <div
-                className="flex flex-wrap gap-2"
-                role="group"
-                aria-label="Filtros por categoria"
-              >
-                {filterButtons.map((btn) => {
-                  const isActive = activeFilter === btn.id;
-                  const isDuplicateBtn = btn.id === 'duplicates';
-                  return (
-                    <button
-                      key={btn.id}
-                      type="button"
-                      onClick={() => setActiveFilter(btn.id)}
-                      className={`px-4 py-3 text-sm font-semibold tabular-nums transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C] ${
-                        isActive
-                          ? 'bg-[#C9A45C] text-[#141413]'
-                          : isDuplicateBtn && btn.count > 0
-                          ? 'bg-[#3A2822] text-[#F2B391] hover:bg-[#4A322A]'
-                          : 'bg-[#343430] text-[#F5F3EE] hover:bg-[#282825]'
-                      }`}
-                    >
-                      {btn.label} ({btn.count})
-                    </button>
-                  );
-                })}
-              </div>
+            <div
+              className="flex flex-wrap gap-1.5"
+              role="group"
+              aria-label="Filtros por categoria"
+            >
+              {filterButtons.map((btn) => {
+                const isActive = activeFilter === btn.id;
+                const isDuplicateBtn = btn.id === 'duplicates';
+                return (
+                  <button
+                    key={btn.id}
+                    type="button"
+                    onClick={() => setActiveFilter(btn.id)}
+                    className={`h-8 px-3 text-[13px] font-medium tabular-nums rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 ${
+                      isDuplicateBtn && btn.count > 0
+                        ? isActive
+                          ? 'bg-red-500/25 border border-red-500/50 text-red-300 focus-visible:outline-red-400'
+                          : 'bg-red-500/15 border border-red-500/30 text-red-400 hover:bg-red-500/20 focus-visible:outline-red-400'
+                        : isActive
+                        ? 'bg-[#22242A] border border-[#343841] text-[#F7F8F8] focus-visible:outline-[#434854]'
+                        : 'bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] hover:bg-[#16181C] text-[#8A8F98] hover:text-[#F7F8F8] focus-visible:outline-[#434854]'
+                    }`}
+                  >
+                    {btn.label}{' '}
+                    <span className="opacity-75 ml-0.5">({btn.count})</span>
+                  </button>
+                );
+              })}
             </div>
           </section>
 
@@ -720,36 +852,36 @@ export default function PanelPage() {
           {feedbackNotice && (
             <div
               role="status"
-              className="bg-[#2E2A21] text-[#E5C98B] px-5 py-3.5 text-sm font-medium"
+              className="bg-[#111214] border border-[#1F2125] rounded-lg text-[#F7F8F8] px-4 py-2.5 text-[13px] font-normal"
             >
               {feedbackNotice}
             </div>
           )}
 
-          {/* 4. Lista Alfabética da Portaria (A a Z) */}
-          <section aria-labelledby="guest-list-heading" className="space-y-3">
+          {/* 4. Lista Alfabética da Portaria (Alta densidade de trabalho Linear) */}
+          <section aria-labelledby="guest-list-heading" className="space-y-2.5">
             <div className="flex items-baseline justify-between px-1">
               <h2
                 id="guest-list-heading"
-                className="font-solid text-xl sm:text-2xl font-bold text-[#F5F3EE] tracking-tight"
+                className="text-[14px] font-medium text-[#F7F8F8] tracking-[-0.01em]"
               >
                 Lista Alfabética da Portaria (A a Z)
               </h2>
-              <span className="text-sm text-[#9E9B93] tabular-nums">
+              <span className="text-[12.5px] text-[#8A8F98] font-normal tabular-nums">
                 Exibindo {filteredGuests.length} de {stats.total}
               </span>
             </div>
 
             {isLoading ? (
-              <div className="bg-[#1E1E1C] p-10 text-center text-[#9E9B93]">
+              <div className="bg-[#111214] border border-[#1F2125] rounded-xl p-8 text-center text-[13.5px] text-[#8A8F98]">
                 Carregando lista da portaria...
               </div>
             ) : filteredGuests.length === 0 ? (
-              <div className="bg-[#1E1E1C] p-10 text-center space-y-4">
-                <p className="text-base text-[#F5F3EE] font-medium">
+              <div className="bg-[#111214] border border-[#1F2125] rounded-xl p-8 text-center space-y-3">
+                <p className="text-[14px] text-[#F7F8F8] font-medium">
                   Nenhum convidado encontrado com os filtros atuais.
                 </p>
-                <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex flex-wrap justify-center gap-2">
                   {(searchQuery || activeFilter !== 'all') && (
                     <button
                       type="button"
@@ -757,7 +889,7 @@ export default function PanelPage() {
                         setSearchQuery('');
                         setActiveFilter('all');
                       }}
-                      className="px-5 py-3 bg-[#343430] text-[#F5F3EE] text-sm font-semibold hover:bg-[#282825]"
+                      className="h-8 px-3.5 bg-[#16181C] border border-[#1F2125] hover:border-[#2E3138] text-[#F7F8F8] text-[13px] font-medium rounded-lg transition-colors duration-100"
                     >
                       Limpar busca e filtros
                     </button>
@@ -766,7 +898,7 @@ export default function PanelPage() {
                     <button
                       type="button"
                       onClick={handleResetDemo}
-                      className="px-5 py-3 bg-[#C9A45C] text-[#141413] text-sm font-semibold"
+                      className="h-8 px-3.5 bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] text-[#F7F8F8] text-[13px] font-medium rounded-lg transition-colors duration-100"
                     >
                       Carregar dados de exemplo
                     </button>
@@ -774,158 +906,174 @@ export default function PanelPage() {
                 </div>
               </div>
             ) : (
-              <ul className="space-y-3" aria-label="Convidados confirmados">
-                {filteredGuests.map((guest) => {
-                  const isConfirmingDelete = pendingDeleteId === guest.id;
+              <div className="bg-[#111214] border border-[#1F2125] rounded-xl overflow-hidden divide-y divide-[#1F2125]">
+                <ul aria-label="Convidados confirmados" className="divide-y divide-[#1F2125]">
+                  {filteredGuests.map((guest) => {
+                    const isConfirmingDelete = pendingDeleteId === guest.id;
 
-                  return (
-                    <li
-                      key={guest.id}
-                      className={`p-5 sm:p-6 transition-colors ${
-                        guest.isDuplicate
-                          ? 'bg-[#251C18]'
-                          : guest.checkedIn
-                          ? 'bg-[#1A1A18]'
-                          : 'bg-[#1E1E1C]'
-                      }`}
-                    >
-                      {/* Layout Mobile-First: No celular os botões empilham abaixo do nome confortavelmente */}
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
-                        {/* Informações do convidado: largura total no celular sem espremer */}
-                        <div className="space-y-2 min-w-0 flex-1">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span
-                              className={`text-base sm:text-lg font-semibold break-words transition-colors ${
-                                guest.checkedIn
-                                  ? 'line-through text-[#9E9B93]'
-                                  : 'text-[#F5F3EE]'
-                              }`}
-                            >
-                              {guest.name}
-                            </span>
-
-                            {/* Badge de Faixa Etária */}
-                            <span className="inline-block px-2.5 py-0.5 text-xs font-semibold bg-[#2E2A21] text-[#E5C98B]">
-                              {guest.ageBadge}
-                            </span>
-
-                            {/* Badge de Check-in Concluído */}
-                            {guest.checkedIn && (
-                              <span className="inline-block px-2.5 py-0.5 text-xs font-semibold bg-[#2E2A21] text-[#E5C98B]">
-                                Presente
+                    return (
+                      <li
+                        key={guest.id}
+                        className={`px-4 py-2.5 transition-colors duration-100 ${
+                          guest.isDuplicate
+                            ? 'bg-red-500/[0.03] hover:bg-red-500/[0.06]'
+                            : guest.checkedIn
+                            ? 'bg-emerald-500/[0.02] hover:bg-[#16181C]'
+                            : 'bg-[#111214] hover:bg-[#16181C]'
+                        }`}
+                      >
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4">
+                          {/* Informações do convidado compactas em linha */}
+                          <div className="min-w-0 flex-1 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                            <div className="flex flex-wrap items-center gap-2 min-w-0">
+                              <span
+                                className={`text-[14px] font-medium truncate transition-colors duration-100 ${
+                                  guest.checkedIn
+                                    ? 'line-through text-[#8A8F98]'
+                                    : 'text-[#F7F8F8]'
+                                }`}
+                              >
+                                {guest.name}
                               </span>
-                            )}
 
-                            {/* Destaque de Duplicidade em 2 níveis ("Nome Duplicado" ou "Possível Duplicado") */}
-                            {guest.isDuplicate && guest.duplicateBadgeLabel && (
-                              <span className="inline-block px-2.5 py-0.5 text-xs font-semibold bg-[#3D2821] text-[#F2B391]">
-                                {guest.duplicateBadgeLabel}
+                              {/* Badge de Faixa Etária (Neutro sutil) */}
+                              <span className="inline-flex items-center px-2 py-0.5 text-[12px] font-normal rounded bg-[#16181C] text-[#8A8F98] border border-[#1F2125]">
+                                {guest.ageBadge}
                               </span>
-                            )}
+
+                              {/* Badge de Check-in Concluído (Verde Esmeralda Semântico) */}
+                              {guest.checkedIn && (
+                                <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[12px] font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded">
+                                  <CheckIcon className="w-3.5 h-3.5" />
+                                  Presente
+                                </span>
+                              )}
+
+                              {/* Destaque de Duplicidade (Vermelho Semântico) */}
+                              {guest.isDuplicate && guest.duplicateBadgeLabel && (
+                                <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[12px] font-medium bg-red-500/15 text-red-400 border border-red-500/30 rounded">
+                                  <AlertIcon className="w-3.5 h-3.5" />
+                                  {guest.duplicateBadgeLabel}
+                                </span>
+                              )}
+                            </div>
+
+                            <span className="hidden sm:inline text-[#2E3138] text-xs select-none">•</span>
+
+                            <p className="text-[13px] text-[#8A8F98] font-normal truncate">
+                              {guest.originLabel}
+                            </p>
                           </div>
 
-                          <p className="text-xs sm:text-sm text-[#9E9B93]">
-                            {guest.originLabel}
-                          </p>
-                        </div>
-
-                        {/* Controles Operacionais: Check-in, Não é duplicado e Remover */}
-                        <div className="flex flex-wrap items-center gap-2 pt-2.5 sm:pt-0 border-t border-[#282825] sm:border-0 w-full sm:w-auto justify-end">
-                          <button
-                            type="button"
-                            onClick={() => handleToggleCheckIn(guest.id)}
-                            aria-pressed={guest.checkedIn}
-                            className={`flex-1 sm:flex-initial text-center px-4 py-3 sm:px-5 sm:py-3 text-sm font-semibold transition-transform duration-150 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C] ${
-                              guest.checkedIn
-                                ? 'bg-[#2E2A21] text-[#E5C98B] hover:opacity-90'
-                                : 'bg-[#343430] text-[#F5F3EE] hover:bg-[#C9A45C] hover:text-[#141413]'
-                            }`}
-                          >
-                            {guest.checkedIn ? 'Check-in Feito ✓' : 'Check-in'}
-                          </button>
-
-                          {guest.isDuplicate && (
+                          {/* Controles Operacionais compactos com ícones de 16px (w-4 h-4) e resposta de 100ms */}
+                          <div className="flex flex-wrap items-center gap-1.5 pt-2 sm:pt-0 border-t border-[#1F2125] sm:border-0 w-full sm:w-auto justify-end shrink-0">
                             <button
                               type="button"
-                              onClick={() => handleDismissDuplicate(guest)}
-                              className="px-3.5 py-3 text-sm font-medium bg-[#3A2822] text-[#F2B391] hover:bg-[#4A322A] hover:text-[#F5F3EE] transition-colors shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E89B74]"
-                              aria-label={`Dispensar alerta de duplicidade para ${guest.name}`}
+                              onClick={() => handleToggleCheckIn(guest.id)}
+                              aria-pressed={guest.checkedIn}
+                              className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 h-8 px-3 text-[13px] font-medium rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 ${
+                                guest.checkedIn
+                                  ? 'bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 focus-visible:outline-emerald-400'
+                                  : 'bg-[#16181C] border border-[#1F2125] hover:border-[#2E3138] text-[#F7F8F8] hover:bg-[#1C1E23] focus-visible:outline-[#434854]'
+                              }`}
                             >
-                              Não é duplicado
+                              {guest.checkedIn ? (
+                                <>
+                                  <CheckIcon className="w-4 h-4 text-emerald-400" />
+                                  <span>Check-in Feito</span>
+                                </>
+                              ) : (
+                                <>
+                                  <CircleIcon className="w-4 h-4 text-[#8A8F98]" />
+                                  <span>Check-in</span>
+                                </>
+                              )}
                             </button>
-                          )}
 
-                          {!isConfirmingDelete ? (
-                            <button
-                              type="button"
-                              onClick={() => setPendingDeleteId(guest.id)}
-                              className="px-4 py-3 text-sm font-medium bg-[#282825] text-[#9E9B93] hover:text-[#F5F3EE] hover:bg-[#343430] transition-colors shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C9A45C]"
-                              aria-label={`Remover ${guest.name} da lista`}
-                            >
-                              Remover
-                            </button>
-                          ) : (
-                            <div
-                              className="flex items-center gap-1.5 bg-[#291E1A] p-1 shrink-0"
-                              role="group"
-                              aria-label={`Confirmar remoção de ${guest.name}`}
-                            >
+                            {guest.isDuplicate && (
                               <button
                                 type="button"
-                                onClick={() =>
-                                  handleConfirmRemoveGuest(guest.id)
-                                }
-                                className="px-3 py-2 text-xs font-semibold bg-[#A84A32] text-[#F5F3EE] hover:opacity-95"
+                                onClick={() => handleDismissDuplicate(guest)}
+                                className="inline-flex items-center justify-center h-8 px-2.5 text-[13px] font-normal bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 rounded-lg transition-colors duration-100 shrink-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-red-400"
+                                aria-label={`Dispensar alerta de duplicidade para ${guest.name}`}
                               >
-                                Confirmar
+                                Não é duplicado
                               </button>
+                            )}
+
+                            {!isConfirmingDelete ? (
                               <button
                                 type="button"
-                                onClick={() => setPendingDeleteId(null)}
-                                className="px-2.5 py-2 text-xs font-medium bg-[#343430] text-[#F5F3EE]"
+                                onClick={() => setPendingDeleteId(guest.id)}
+                                className="inline-flex items-center justify-center gap-1.5 h-8 px-2.5 text-[13px] font-normal bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] text-[#8A8F98] hover:text-[#F7F8F8] hover:bg-[#16181C] rounded-lg transition-colors duration-100 shrink-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[#434854]"
+                                aria-label={`Remover ${guest.name} da lista`}
                               >
-                                Cancelar
+                                <TrashIcon className="w-4 h-4" />
+                                <span>Remover</span>
                               </button>
-                            </div>
-                          )}
+                            ) : (
+                              <div
+                                className="flex items-center gap-1 bg-[#16181C] border border-red-500/30 rounded-lg p-0.5 shrink-0"
+                                role="group"
+                                aria-label={`Confirmar remoção de ${guest.name}`}
+                              >
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    handleConfirmRemoveGuest(guest.id)
+                                  }
+                                  className="h-7 px-2.5 text-[12px] font-medium bg-red-500/20 hover:bg-red-500/30 border border-red-500/40 text-red-300 rounded-md transition-colors duration-100"
+                                >
+                                  Confirmar
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => setPendingDeleteId(null)}
+                                  className="h-7 px-2 text-[12px] font-normal bg-transparent text-[#8A8F98] hover:text-[#F7F8F8] rounded-md transition-colors duration-100"
+                                >
+                                  Cancelar
+                                </button>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             )}
           </section>
         </main>
 
         {/* Rodapé Operacional com Restauração de Dados de Exemplo e Assinatura */}
-        <footer className="mt-14 bg-[#1E1E1C] py-8">
+        <footer className="mt-12 bg-[#111214] border-t border-[#1F2125] py-6">
           <div className="max-w-5xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               {!confirmResetDemo ? (
                 <button
                   type="button"
                   onClick={() => setConfirmResetDemo(true)}
-                  className="text-xs sm:text-sm text-[#9E9B93] hover:text-[#F5F3EE] bg-[#282825] px-4 py-2.5 transition-colors"
+                  className="h-8 px-3 text-[13px] font-normal text-[#8A8F98] hover:text-[#F7F8F8] bg-[#16181C] border border-[#1F2125] hover:border-[#2E3138] rounded-lg transition-colors duration-100"
                 >
                   Restaurar dados de exemplo
                 </button>
               ) : (
-                <div className="flex flex-wrap items-center gap-2 bg-[#282825] p-2">
-                  <span className="text-xs text-[#F5F3EE] px-2">
-                    Substituir lista atual pelos 6 convidados de exemplo?
+                <div className="flex flex-wrap items-center gap-2 bg-[#16181C] border border-[#1F2125] rounded-lg p-1.5">
+                  <span className="text-[12.5px] text-[#F7F8F8] px-2">
+                    Substituir lista atual pelos 11 convidados de exemplo?
                   </span>
                   <button
                     type="button"
                     onClick={handleResetDemo}
-                    className="px-3 py-1.5 text-xs font-semibold bg-[#C9A45C] text-[#141413]"
+                    className="h-7 px-2.5 text-[12px] font-medium bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] text-[#F7F8F8] rounded-md transition-colors duration-100"
                   >
                     Sim, restaurar
                   </button>
                   <button
                     type="button"
                     onClick={() => setConfirmResetDemo(false)}
-                    className="px-3 py-1.5 text-xs font-medium bg-[#343430] text-[#F5F3EE]"
+                    className="h-7 px-2.5 text-[12px] font-normal bg-[#111214] border border-[#1F2125] hover:border-[#2E3138] text-[#8A8F98] hover:text-[#F7F8F8] rounded-md transition-colors duration-100"
                   >
                     Cancelar
                   </button>
@@ -934,24 +1082,21 @@ export default function PanelPage() {
 
               <Link
                 to={`/convite/${event.slug}`}
-                className="text-xs sm:text-sm text-[#9E9B93] hover:text-[#C9A45C] transition-colors"
+                className="text-[13px] font-normal text-[#8A8F98] hover:text-[#F7F8F8] transition-colors duration-100"
               >
                 Ver página do convite
               </Link>
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-6 text-xs sm:text-sm text-[#9E9B93]">
-              <span className="flex items-center gap-1.5">
-                <CrownIcon className="w-3.5 h-3.5 text-[#C9A45C]" />
-                {event.venueName}
-              </span>
+            <div className="flex items-center justify-between sm:justify-end gap-5 text-[12.5px] text-[#8A8F98]">
               <a
                 href={event.authorUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#F5F3EE] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[#8A8F98] hover:text-[#FFFFFF] transition-colors duration-100"
               >
-                {event.authorName}
+                <span>Feito por</span>
+                <ObzaWordmark className="h-2.5 w-auto text-[#F7F8F8] inline-block" />
               </a>
             </div>
           </div>
@@ -965,41 +1110,38 @@ export default function PanelPage() {
             aria-modal="true"
             aria-labelledby="duplicate-modal-title"
           >
-            <div className="bg-[#1E1E1C] max-w-md w-full p-6 sm:p-8 space-y-5 text-left">
-              <div className="flex items-center gap-3">
-                <span
-                  className="inline-block w-3 h-3 bg-[#D9825B] shrink-0"
-                  aria-hidden="true"
-                />
+            <div className="bg-[#111214] border border-[#1F2125] rounded-xl shadow-2xl max-w-md w-full p-6 space-y-4 text-left">
+              <div className="flex items-center gap-2.5">
+                <AlertIcon className="w-4 h-4 text-red-400 shrink-0" />
                 <h3
                   id="duplicate-modal-title"
-                  className="font-solid text-xl sm:text-2xl font-bold text-[#F5F3EE] tracking-tight"
+                  className="text-lg font-medium text-[#F7F8F8] tracking-[-0.02em]"
                 >
                   Nomes duplicados na lista
                 </h3>
               </div>
 
-              <p className="text-sm text-[#D6C5BC] leading-relaxed">
+              <p className="text-[13.5px] text-[#8A8F98] font-normal leading-relaxed">
                 Ainda existem{' '}
-                <strong className="font-semibold text-[#F2B391]">
+                <span className="font-medium text-red-400">
                   {stats.duplicateRecordsCount} registros
-                </strong>{' '}
+                </span>{' '}
                 com nome repetido ({stats.uniqueDuplicateNames.join(', ')}). Deseja revisar antes de imprimir a folha da portaria?
               </p>
 
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
                 <button
                   type="button"
                   autoFocus
                   onClick={handleReviewDuplicatesFromModal}
-                  className="flex-1 py-3.5 px-5 bg-[#C9A45C] text-[#141413] font-semibold text-sm transition-transform duration-150 active:scale-[0.98] hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C]"
+                  className="flex-1 h-9 px-4 bg-[#22242A] hover:bg-[#2A2D35] border border-[#343841] hover:border-[#434854] text-[#F7F8F8] font-medium text-[13.5px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#434854]"
                 >
                   Revisar duplicados
                 </button>
                 <button
                   type="button"
                   onClick={handlePrintAnywayFromModal}
-                  className="py-3.5 px-5 bg-[#343430] text-[#F5F3EE] font-medium text-sm transition-colors hover:bg-[#282825] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A45C]"
+                  className="h-9 px-4 bg-[#16181C] border border-[#1F2125] hover:border-[#2E3138] text-[#8A8F98] hover:text-[#F7F8F8] font-normal text-[13.5px] rounded-lg transition-colors duration-100 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#434854]"
                 >
                   Imprimir mesmo assim
                 </button>
@@ -1017,9 +1159,13 @@ export default function PanelPage() {
         <div className="pb-5 mb-6 border-b-2 border-[#111111]">
           <div className="flex items-baseline justify-between">
             <div className="flex items-center gap-2">
-              <CrownIcon className="w-4 h-4 text-[#111111]" />
+              <ObzaBrand
+                iconClassName="w-4 h-4 text-[#111111]"
+                wordmarkClassName="h-3.5 w-auto text-[#111111]"
+                className="inline-flex items-center gap-2 text-[#111111]"
+              />
               <span className="text-xs font-bold uppercase tracking-wider text-[#111111]">
-                {event.venueName} • Lista Oficial da Portaria
+                • Lista de Portaria
               </span>
             </div>
             <span className="text-xs font-medium text-[#333333]">
@@ -1027,7 +1173,7 @@ export default function PanelPage() {
             </span>
           </div>
 
-          <h1 className="font-solid text-2xl sm:text-3xl font-bold text-[#111111] mt-2 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#111111] mt-2 tracking-tight">
             {event.eventTitle || `15 Anos de ${event.honoree}`}
           </h1>
 
