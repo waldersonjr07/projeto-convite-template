@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * Símbolo oficial da marca OBZA (losango / triângulo partido).
+ * Símbolo oficial da marca Obza (losango / triângulo partido).
  * Reproduz em SVG puro a geometria exata de `use_obza/obza_logo.png`,
  * adaptando-se via `currentColor` tanto para o Dark Mode (#FFFFFF / #F7F8F8)
  * quanto para áreas claras e impressão A4 (#111111 / #000000), sem fundo quadrado.
@@ -16,7 +16,7 @@ export function ObzaIcon({ className = 'w-5 h-5 text-[#FFFFFF]' }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="OBZA"
+      aria-label="Obza"
     >
       {/* Triângulo superior-esquerdo com canto arredondado */}
       <path
@@ -33,8 +33,8 @@ export function ObzaIcon({ className = 'w-5 h-5 text-[#FFFFFF]' }) {
 }
 
 /**
- * Escrita tipográfica oficial "OBZA" acompanhando a estética geométrica
- * da nova logo (caixa alta sólida + letra 'O' com corte diagonal característico).
+ * Escrita tipográfica oficial "Obza" acompanhando a estética geométrica
+ * da nova logo (letra 'O' com corte diagonal característico).
  */
 export function ObzaWordmark({ className = 'h-3.5 w-auto text-current' }) {
   const maskId = React.useId();
@@ -46,7 +46,7 @@ export function ObzaWordmark({ className = 'h-3.5 w-auto text-current' }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="OBZA"
+      aria-label="Obza"
     >
       <defs>
         <mask id={maskId}>
@@ -94,7 +94,7 @@ export function ObzaWordmark({ className = 'h-3.5 w-auto text-current' }) {
 }
 
 /**
- * Combinação oficial horizontal: Símbolo geométrico à esquerda + escrita OBZA ao lado.
+ * Combinação oficial horizontal: Símbolo geométrico à esquerda + escrita Obza ao lado.
  */
 export function ObzaBrand({
   iconClassName = 'w-4 h-4',

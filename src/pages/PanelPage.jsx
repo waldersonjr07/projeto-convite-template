@@ -245,7 +245,7 @@ export default function PanelPage() {
     const root = document.documentElement;
     root.style.setProperty('--bg-main', '#08090A');
     root.style.setProperty('--text-primary', '#F7F8F8');
-    document.title = 'OBZA | Painel da Portaria';
+    document.title = 'Obza | Painel da Portaria';
   }, [event]);
 
   useEffect(() => {
@@ -624,7 +624,7 @@ export default function PanelPage() {
           INTERFACE OPERACIONAL EM TELA (Oculta na impressão A4 via .no-print)
          ===================================================================== */}
       <div className="no-print">
-        {/* Cabeçalho Operacional com Branding OBZA (Densidade Linear) */}
+        {/* Cabeçalho Operacional com Branding Obza (Densidade Linear) */}
         <header className="bg-[#111214] border-b border-[#1F2125]">
           <div className="max-w-5xl mx-auto px-5 sm:px-8 py-5 sm:py-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

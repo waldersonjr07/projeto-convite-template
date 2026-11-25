@@ -200,7 +200,7 @@ export default function InvitePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-            {/* Bloco Principal do Espaço Five Buffet */}
+            {/* Bloco Principal do Espaço Obza */}
             <div className="md:col-span-7 bg-surface p-7 sm:p-9 flex flex-col justify-between">
               <div>
                 <p className="text-sm font-medium text-accent mb-2">
